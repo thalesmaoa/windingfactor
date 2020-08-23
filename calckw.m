@@ -18,7 +18,7 @@ if (q ~= round(q))
     % Angulo entre os fasores de tensão
     % Para a máquina simétrica e equilibrada, será sempre igual a 60
     alfa_u = alfa_u * q /2;
-    
+    fprintf('a_u = %.1f\n', alfa_u/pi*180);
 
     if ( mod(Q,3) ~= 0 )
         % Valor de slots inválido
@@ -33,7 +33,7 @@ if (q ~= round(q))
         return;
     end
 
-    if (q < .25)
+    if (q <= .25)
         disp('Topologia não factivel.');
         return;
     end
